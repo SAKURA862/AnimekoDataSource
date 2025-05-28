@@ -1,0 +1,49 @@
+{
+  "exportedMediaSourceDataList": {
+    "mediaSources": [
+      {
+        "factoryId": "web-selector",
+        "version": 2,
+        "arguments": {
+          "name": "HAnime",
+          "description": "",
+          "iconUrl": "<你的网站图标URL>",
+          "searchConfig": {
+            "searchUrl": "https://hanime1.me/search?query={keyword}&type=&genre=&sort=&year=&month=",  // 示例格式：https://example.com/search?wd={keyword}
+            "searchUseOnlyFirstWord": true,
+            "searchRemoveSpecial": true,
+            "searchUseSubjectNamesCount": 1,
+            "rawBaseUrl": "",
+            "requestInterval": 3000,
+            "subjectFormatId": "indexed",
+            "selectorSubjectFormatIndexed": {
+              "selectNames": "<你的动漫名称CSS选择器>",  // 示例：".search-results .title"
+              "selectLinks": "<你的动漫链接CSS选择器>",  // 示例：".search-results a"
+              "preferShorterName": true
+            },
+            "channelFormatId": "index-grouped",
+            "selectorChannelFormatFlattened": {
+              "selectChannelNames": "<你的分集频道CSS选择器>",  // 示例：".episode-tabs a"
+              "matchChannelName": "<你的频道名称正则>",        // 示例："^(?<ch>.+?)(\\d+)?$"
+              "selectEpisodeLists": "<你的剧集列表容器CSS选择器>", // 示例：".episode-list"
+              "selectEpisodesFromList": "<你的单集链接CSS选择器>", // 示例："a"
+              "matchEpisodeSortFromName": "<你的集数提取正则>"    // 示例："第\\s*(?<ep>.+)\\s*集"
+            },
+            "matchVideo": {
+              "enableNestedUrl": true,
+              "matchVideoUrl": "<你的视频链接正则>",  // 示例："(http(s)?:\\/\\/.*\\.m3u8)"
+              "addHeadersToVideo": {
+                "referer": "<你的Referer>",  // 示例："https://example.com"
+                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+              }
+            }
+          },
+          "defaultResolution": "1080P",
+          "filterByEpisodeSort": true,
+          "filterBySubjectName": true
+        },
+        "tier": 2  // 优先级（数值越小优先级越高）
+      }
+    ]
+  }
+}
